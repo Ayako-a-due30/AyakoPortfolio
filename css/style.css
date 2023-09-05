@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   width: 100%;
 }
@@ -236,9 +237,127 @@ footer p {
 @media (max-width: 960px) {
   #header {
     height: 100vh;
+    width: initial;
+    flex-direction: column;
+  }
+  .hamburger-menu {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: #008DC9;
+    margin: 10px 50px 0 0;
+    top: 0;
+    right: 0;
+    z-index: 30;
+    cursor: pointer;
+    transition: 0.4s;
+    padding-top: 10px;
+    position: relative;
+  }
+  .hamburger-menu:hover {
+    opacity: 0.5;
+  }
+  /* ハンバーガーメニューの線の設定（初期の三本線の状態） */
+  .hamburger-menu span {
+    width: 50px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 15px;
+    transition: 0.4s ease-in-out;
+  }
+  /* 1本目の線の位置 */
+  .hamburger-menu span:nth-child(1) {
+    top: 24px;
+  }
+  /* 2本目の線の位置 */
+  .hamburger-menu span:nth-child(2) {
+    top: 40px;
+  }
+  /* 3本目の線の位置 */
+  .hamburger-menu span:nth-child(3) {
+    top: 56px;
+  }
+  .hamburger-menu {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: #008DC9;
+    margin: 10px 50px 0 0;
+    top: 0;
+    right: 0;
+    z-index: 30;
+    cursor: pointer;
+    transition: 0.4s;
+    padding-top: 10px;
+    position: relative;
+  }
+  .hamburger-menu:hover {
+    opacity: 0.5;
+  }
+  /* ハンバーガーメニューの線の設定（初期の三本線の状態） */
+  .hamburger-menu span {
+    width: 50px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 15px;
+    transition: 0.4s ease-in-out;
+  }
+  /* 1本目の線の位置 */
+  .hamburger-menu span:nth-child(1) {
+    top: 24px;
+  }
+  /* 2本目の線の位置 */
+  .hamburger-menu span:nth-child(2) {
+    top: 40px;
+  }
+  /* 3本目の線の位置 */
+  .hamburger-menu span:nth-child(3) {
+    top: 56px;
+  }
+  /*-------------------------------------------
+  hamburger-menuクラスにactiveクラスが付与されたら、三→×に変化するようにする
+  -------------------------------------------*/
+  /* 1本目の線を-45度回転 */
+  .hamburger-menu.active span:nth-child(1) {
+    top: 40px;
+    left: 15px;
+    background: #fff;
+    transform: rotate(-45deg);
+  }
+  /* 2本目と3本目は重ねて45度回転 */
+  .hamburger-menu.active span:nth-child(2),
+  .hamburger-menu.active span:nth-child(3) {
+    top: 40px;
+    background: #fff;
+    transform: rotate(45deg);
+  }
+  /*-------------------------------------------
+  hamburger-navigationIDにactiveクラスが付与されたら、
+  ナビゲーションメニューを表示させる。
+  -------------------------------------------*/
+  /*　opacityを0→1にすることで、ナビゲーションメニューを非表示→表示というふうに実装する　*/
+  #hamburger-navigation.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  h1 {
+    padding: 0;
+    margin-top: 30%;
+    margin-right: auto;
+    margin-left: auto;
   }
   .header-menu {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 20%;
+    padding-right: 0;
     display: block;
+    text-align: center;
+  }
+  .header-menu .header-menu-list {
+    margin-left: 0;
   }
   main {
     width: 100%;
@@ -247,7 +366,6 @@ footer p {
     display: block;
   }
   .eyecatch img {
-    width: auto;
     height: 100vh;
     margin: 0;
     position: initial;
