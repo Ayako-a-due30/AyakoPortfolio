@@ -236,7 +236,7 @@ footer {
         display: block;
         width: 80px;
         height: 80px;
-        background-color: $sub2;
+        background-color: $main2;
         margin: 10px 50px 0 0;
         top: 0;
         right: 0;
@@ -317,9 +317,9 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
   ナビゲーションメニューを表示させる。
   -------------------------------------------*/
   /*　opacityを0→1にすることで、ナビゲーションメニューを非表示→表示というふうに実装する　*/
-  #hamburger-navigation {
-    display: none;
-  }
+//   #hamburger-navigation {
+//     display: none;
+//   }
 
   #hamburger-navigation.active {
     opacity: 1;
@@ -344,6 +344,11 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
         margin-top: 10%;
         margin-right: auto;
         margin-left: auto;
+    }
+    .eyecatch{
+        img {
+            width: auto;
+        }
     }
 
     .header-menu {

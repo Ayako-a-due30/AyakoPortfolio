@@ -17,5 +17,12 @@ hamburgerMenu.addEventListener("click", function () {
     hamburgerMenuSections.toggle('active');
   });
 
-  hamburgerMenu.classList.toggle("active");
-navi.classList.toggle('active');
+//   hamburgerMenu.classList.toggle("active");
+// navi.classList.toggle('active');
+
+//PCページ「ファーストビューの下までスクロールしたらページトップでメニューを固定」
+const scrolled = window.scrollY;
+const viewHeight = document.documentElement.clientHeight;
+addEventListener('scroll',scrolled);
+console.log(scrolled);
+console.log(viewHeight);

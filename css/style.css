@@ -19,16 +19,6 @@ body {
   width: 100%;
 }
 
-#header {
-  width: 100%;
-  background-color: #f3ecda;
-  display: flex;
-  position: absolute;
-  bottom: 0;
-  position: fixed;
-  z-index: 3;
-}
-
 h1 {
   font-size: 36px;
   margin-top: 2%;
@@ -235,16 +225,11 @@ footer p {
 }
 
 @media (max-width: 960px) {
-  #header {
-    height: 100vh;
-    width: initial;
-    flex-direction: column;
-  }
   .hamburger-menu {
     display: block;
     width: 80px;
     height: 80px;
-    background-color: #008DC9;
+    background-color: #3e4f3c;
     margin: 10px 50px 0 0;
     top: 0;
     right: 0;
@@ -261,7 +246,7 @@ footer p {
   .hamburger-menu span {
     width: 50px;
     height: 3px;
-    background: #fff;
+    background: #ff6e3e;
     position: absolute;
     left: 15px;
     transition: 0.4s ease-in-out;
@@ -277,23 +262,6 @@ footer p {
   /* 3本目の線の位置 */
   .hamburger-menu span:nth-child(3) {
     top: 56px;
-  }
-  .hamburger-menu {
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-color: #008DC9;
-    margin: 10px 50px 0 0;
-    top: 0;
-    right: 0;
-    z-index: 30;
-    cursor: pointer;
-    transition: 0.4s;
-    padding-top: 10px;
-    position: relative;
-  }
-  .hamburger-menu:hover {
-    opacity: 0.5;
   }
   /* ハンバーガーメニューの線の設定（初期の三本線の状態） */
   .hamburger-menu span {
@@ -342,11 +310,26 @@ footer p {
     opacity: 1;
     visibility: visible;
   }
+  #hamburger-navigation.active #header {
+    height: 100vh;
+    width: initial;
+    flex-direction: column;
+    width: 100%;
+    background-color: #f3ecda;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    position: fixed;
+    z-index: 3;
+  }
   h1 {
     padding: 0;
-    margin-top: 30%;
+    margin-top: 10%;
     margin-right: auto;
     margin-left: auto;
+  }
+  .eyecatch img {
+    width: auto;
   }
   .header-menu {
     margin-right: 0;
@@ -355,6 +338,7 @@ footer p {
     padding-right: 0;
     display: block;
     text-align: center;
+    padding-right: 0;
   }
   .header-menu .header-menu-list {
     margin-left: 0;
