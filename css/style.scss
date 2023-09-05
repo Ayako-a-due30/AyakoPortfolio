@@ -23,15 +23,6 @@ body {
     position: relative;
     width: 100%;
 }
-#header {
-    width: 100%;
-    background-color: $sub2;
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    position: fixed;
-    z-index: 3;
-}
 
 h1 {
     font-size: 36px;
