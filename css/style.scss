@@ -4,8 +4,17 @@ $main2:#3e4f3c;
 $sub:#7f886b;
 $sub2:#f3ecda;
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     width: 100%;
+}
+
+
+nav {
+    display: flex;
 }
 
 .triangle {
@@ -18,11 +27,6 @@ body {
     transform: skewY(-10deg);
 }
 
-.first-view {
-    height: 100vh;
-    position: relative;
-    width: 100%;
-}
 
 h1 {
     font-size: 36px;
@@ -33,6 +37,9 @@ h1 {
     text-shadow: #7f886b;
 }
 
+.header {
+    position: relative;
+}
 .header-menu {
     margin-top: auto;
     width: 100vw;
@@ -53,21 +60,43 @@ h1 {
     text-decoration-color: $main;
 }
 
+.first-view {
+    height: 85vh;
+    position: relative;
+    width: 100%;
+}
+
 .eyecatch {
-    img {
+    video {
         position: absolute;
-        top: 100px;
-        left: 130px;
-        width: 50%;
-        background-image: url(../img/eyecatch.jpg);
+        margin-left: 20%;
+        margin-top: 5%;
     }
-    h1 {
+    h3 {
         position: absolute;
-        bottom: 200px;
-        right: 200px;
+        bottom: 20%;
+        right: 20%;
+        font-size: 2rem;
     }
 }
 
+#mask {
+    display: none;
+    transition: all 5s;
+}
+
+#mask.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $sub;
+    opacity: 0.8;
+    z-index: 2;
+    cursor: pointer;
+}
 h2 {
     position: absolute;
     font-size: 36px;
@@ -83,6 +112,7 @@ h2 {
 }
 
 section {
+    scroll-behavior: smooth;
     position: relative;
     margin-top: 200px;
     margin-bottom: 100px;
@@ -227,25 +257,46 @@ footer {
     height: 150px;
     p {
         text-align: center;
-        padding-top: 50px;
+        padding-top: 20px;
     }
 }
 //レスポンシブ
 @media (max-width:960px) {
+    .header {
+        position: relative;
+        height: 100vh;
+    }
+
+    .eyecatch {
+        margin: 0;
+        .eyecatch-video {
+            margin-top: 10%;
+            width: 100%;
+            top: 20%;
+            right: 5%;
+        }
+        .eyecatch-text {
+            left: 10%;
+            bottom: 10%;
+        }
+    }
+
     .hamburger-menu {
         display: block;
         width: 80px;
         height: 80px;
         background-color: $main2;
-        margin: 10px 50px 0 0;
+        // margin: 10px 50px 0 0;
         top: 0;
         right: 0;
         z-index: 30;
         cursor: pointer;
         transition: 0.4s;
         padding-top: 10px;
-        position: relative;
+        position: absolute;
+        position: fixed;
       }
+
       .hamburger-menu:hover {
         opacity: 0.5;
       }
@@ -317,25 +368,22 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
   ナビゲーションメニューを表示させる。
   -------------------------------------------*/
   /*　opacityを0→1にすることで、ナビゲーションメニューを非表示→表示というふうに実装する　*/
-//   #hamburger-navigation {
-//     display: none;
-//   }
+  #hamburger-navigation {
+    display: none;
+  }
 
-  #hamburger-navigation.active {
+  #hamburger-navigation.active{
     opacity: 1;
     visibility: visible;
-    #header {
         height: 100vh;
         width: initial;
         flex-direction: column;
         width: 100%;
-        background-color: $sub2;
         display: flex;
         position: absolute;
-        bottom: 0;
+        top: 0;
         position: fixed;
         z-index: 3;
-    }
   }
 
   
@@ -345,16 +393,15 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
         margin-right: auto;
         margin-left: auto;
     }
-    .eyecatch{
-        img {
-            width: auto;
-        }
+    .logo {
+        margin-top: 40%;
     }
 
     .header-menu {
+        position: absolute;
         margin-right: 0;
         margin-left: 0;
-        margin-top: 20%;
+        margin-top: 55%;
         padding-right: 0;
         display: block;
         text-align: center;
@@ -368,6 +415,9 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
         width: 100%;
     }
 
+    section {
+        margin-top: 100px;
+    }
     .work-table {
         display: block;
     }
@@ -377,6 +427,7 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
             height: 100vh;
             margin: 0;
             position: initial;
+            width: auto;
         }
         h1 {
             display: none;
@@ -391,7 +442,7 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
     }
 
     .works-list {
-        margin-bottom: 30px;
+        margin-bottom: 70px;
         img {
             width: 100%;
         }
@@ -399,23 +450,22 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
 
     .about {
         display: block;
+        width: 100%;
+        div {
+            margin-right: auto;
+            margin-left: auto;
+        }
     }
 
     .about-img {
         width: 80%;
-        div{
-            margin-right: auto;
-            margin-left: auto;
-            text-align: center;
-        }
     }
-    
+
     .about-text {
-        p{
-            display: block;
-            width: 100%;
-            margin-top: 30px;
-        }
+        display: block;
+        width: initial;
+        margin-top: 10%;
+        margin-left: 0;
     }
     
     .skill-block {
@@ -424,19 +474,15 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
     }
     .skill-img {
         img{
-            // margin-right: auto;
-            // margin-left: auto;
             width: 100%;
         }
     }
 
     .skill-text {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 0;
+        margin-right: 0;
         margin-top: 40px;
-        p {
-            width: 100%;
-        }
+        width: initial;
     }
 
     .contact {
