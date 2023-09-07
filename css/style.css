@@ -7,6 +7,10 @@ body {
   width: 100%;
 }
 
+h1, h2, h3 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
 nav {
   display: flex;
   background-color: #f3ecda;
@@ -19,6 +23,7 @@ nav.fixed {
   opacity: 1;
   top: 0;
   z-index: 5;
+  width: 100%;
 }
 
 .triangle {
@@ -67,21 +72,23 @@ h1 {
 
 .header-menu {
   margin-top: auto;
-  width: 100vw;
+  width: 100%;
   margin-bottom: auto;
   display: flex;
-  justify-content: end;
-  padding-right: 100px;
+  justify-content: right;
+  padding-right: 10%;
 }
 .header-menu .header-menu-list {
   margin-top: 50px;
   margin-bottom: 50px;
   vertical-align: middle;
-  margin-left: 10%;
-  transition: all 0.5s 0s ease-in-out;
+  margin-left: 15%;
 }
-
-.header-menu-list:hover {
+.header-menu .header-menu-list a {
+  transition: all 0.5s 0s ease-in-out;
+  position: absolute;
+}
+.header-menu .header-menu-list a:hover {
   text-decoration: underline;
   text-decoration-color: #ff6e3e;
   font-size: large;
@@ -116,7 +123,6 @@ h2 {
   top: 0;
   padding-top: 50px;
   letter-spacing: 0.5rem;
-  font-family: "Ubuntu", sans-serif;
 }
 
 section {
@@ -420,6 +426,9 @@ footer p {
   .header-menu .header-menu-list {
     margin-left: 0;
   }
+  .header-menu .header-menu-list a {
+    position: initial;
+  }
   main {
     width: 100%;
   }
@@ -468,23 +477,24 @@ footer p {
   .about {
     display: block;
     width: 100%;
+    margin-top: 10%;
   }
   .about div {
     margin-right: auto;
     margin-left: auto;
   }
-  .about-img {
-    width: 80%;
-  }
-  .about-text {
+  .about .about-text {
     display: block;
     width: initial;
     margin-top: 10%;
     margin-left: 0;
   }
+  .about-img {
+    width: 80%;
+  }
   .skill-block {
     display: block;
-    margin-top: 0;
+    margin-top: 10%;
   }
   .skill-img img {
     width: 100%;
@@ -494,6 +504,9 @@ footer p {
     margin-right: 0;
     margin-top: 40px;
     width: initial;
+  }
+  .skill-text h3 {
+    margin-bottom: 10%;
   }
   .contact {
     width: 100%;

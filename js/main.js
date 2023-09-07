@@ -39,6 +39,31 @@ const showWorks =(entries)=> {
 const workObserver = new IntersectionObserver(showWorks);
 works.forEach((work)=>workObserver.observe(work));
 
+//skillsアニメーション-------------------------
+
+const skillBlock1 = document.querySelector('#skill-block1');
+const skillBlock2 = document.querySelector('#skill-block2');
+
+const showBlock1 = (entries)=> {
+  const keyframes = {
+    opacity:[0,1],
+    translate:['200px 0',0],
+  };
+  entries[0].target.animate(keyframes,600);
+};
+const block1Observer = new IntersectionObserver(showBlock1);
+block1Observer.observe(skillBlock1);
+
+const showBlock2 = (entries)=> {
+  const keyframes = {
+    opacity:[0,1],
+    translate:['translateX(-200px)', 'translateX(0)'],
+  };
+  entries[0].target.animate(keyframes,600);
+};
+const block2Observer = new IntersectionObserver(showBlock2);
+block1Observer.observe(skillBlock2);
+
 // CONTACT文字数カウント-----------------------
 //textarea
 const message = document.querySelector('#message');
