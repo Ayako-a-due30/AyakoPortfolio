@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <!-- ローディング画面 -->
+    <div id="loading">
+        <svg class="spinner" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_qM83{animation:spinner_8HQG 1.05s infinite}.spinner_oXPr{animation-delay:.1s}.spinner_ZTLf{animation-delay:.2s}@keyframes spinner_8HQG{0%,57.14%{animation-timing-function:cubic-bezier(0.33,.66,.66,1);transform:translate(0)}28.57%{animation-timing-function:cubic-bezier(0.33,0,.66,.33);transform:translateY(-6px)}100%{transform:translate(0)}}</style><circle class="spinner_qM83" cx="4" cy="12" r="3"/><circle class="spinner_qM83 spinner_oXPr" cx="12" cy="12" r="3"/><circle class="spinner_qM83 spinner_ZTLf" cx="20" cy="12" r="3"/></svg>
+    </div>
     <header id="header" class="hamburger-menu-section header">
         <div class="first-view">
             <div class="eyecatch">
@@ -123,9 +127,13 @@
                 <dt class="email">メールアドレス</dt>
                 <dd><input type="email"></dd>
                 <dt class="message">お問い合わせ内容</dt>
-                <dd><input type="textarea" class="message-box"></dd>
+                <dd><input type="textarea" id="message">
+                    <div>現在<span id="count">0</span>文字
+                    </div>
+                </dd>
                 <button class="submit-button">送信</button>
             </dl>
+           
         </section>
     </main>
     <footer id="footer">
