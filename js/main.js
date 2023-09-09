@@ -131,11 +131,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	} else if (mainElement.classList.contains("morework-page")) {
 		// moreworkページ用のJavaScriptコード
-    console.log("test");
-    const swiper = new Swiper(".swiper", {});
+
+		const swiper = new Swiper(".swiper", {});
 	} else if (mainElement.classList.contains("works-page")) {
 		// worksページ用のJavaScriptコード
-
 	} else {
 		// 他のページ用のJavaScriptコード
 	}
