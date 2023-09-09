@@ -18,7 +18,6 @@ window.addEventListener('scroll',function() {
   }
 });
 
-
 //worksアニメーション--------------------
 
 const works = document.querySelectorAll('.works-list');
@@ -44,15 +43,29 @@ works.forEach((work)=>workObserver.observe(work));
 const skillBlock1 = document.querySelector('#skill-block1');
 const skillBlock2 = document.querySelector('#skill-block2');
 
-const showBlock1 = (entries)=> {
-  const keyframes = {
-    opacity:[0,1],
-    translate:['200px 0',0],
+const showBlock1 = (entries) => {
+  const keyframes = [
+    {
+      opacity: 0,
+      transform: 'translateX(200px)',
+    },
+    {
+      opacity: 1,
+      transform: 'translateX(0)',
+    },
+  ];
+
+  const options = {
+    duration: 600,
+    fill: 'forwards',
   };
-  entries[0].target.animate(keyframes,600);
+
+  entries[0].target.animate(keyframes, options);
 };
+
 const block1Observer = new IntersectionObserver(showBlock1);
-block1Observer.observe(skillBlock1);
+block1Observer.observe(document.querySelector('#skill-block2'));
+
 
 const showBlock2 = (entries)=> {
   const keyframes = {
@@ -111,3 +124,6 @@ headerMenuList.forEach(menuItem=>{
   });
 });;
 
+//moreWorkスライダー-----------------
+
+const swiper = new Swiper(".swiper", {});
