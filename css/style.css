@@ -526,4 +526,11 @@ footer p {
   #footer {
     height: 10%;
   }
+}
+.img-pc {
+  width: 30%;
+}
+
+.img-phone {
+  width: 30%;
 }/*# sourceMappingURL=style.css.map */

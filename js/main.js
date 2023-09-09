@@ -138,4 +138,3 @@ document.addEventListener("DOMContentLoaded", () => {
 	} else {
 		// 他のページ用のJavaScriptコード
 	}
-});
