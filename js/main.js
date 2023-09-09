@@ -1,4 +1,8 @@
-// ローディング画面--------------------
+document.addEventListener('DOMContentLoaded', () => {
+
+
+  // 全体用
+  // ローディング画面--------------------
 
 const loading = document.querySelector('#loading');
 
@@ -18,7 +22,51 @@ window.addEventListener('scroll',function() {
   }
 });
 
-//worksアニメーション--------------------
+
+
+//レスポンシブ--------------------------
+//ハンバーガーメニュー--------------------
+
+// ハンバーガーメニューの要素
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+// ハンバーガーメニューがクリックされた時に表示されるメニュー画面の要素
+const navi = document.getElementById("hamburger-navigation");
+// ハンバーガーメニュー内の各セクションの要素
+const hamburgerMenuSections = document.querySelectorAll(".hamburger-menu-section");
+// ハンバーガーメニュー内の各メニューの要素
+const headerMenuList = document.querySelectorAll(".header-menu-list");
+
+// マスク
+const mask = document.getElementById("mask");
+
+// ハンバーガーメニューをクリックした時の処理
+hamburgerMenu.addEventListener("click", function () {
+    hamburgerMenu.classList.toggle("active");
+    navi.classList.toggle('active');
+    mask.classList.toggle('active');
+    hamburgerMenuSections.forEach(section=>{
+      section.classList.toggle('active');
+    });
+  });
+
+headerMenuList.forEach(menuItem=>{
+  menuItem.addEventListener("click",function(){
+    hamburgerMenu.classList.toggle("active");
+    navi.classList.toggle('active');
+    mask.classList.toggle('active');
+    hamburgerMenuSections.forEach(section=>{
+      section.classList.toggle('active');
+    });
+
+  });
+});;
+
+
+// ページごとに条件分岐してJSを指定する
+  const mainElement = document.querySelector('#main-content');
+  if (mainElement.classList.contains('front-page')) {
+  // トップページ用のJavaScriptコード
+  //worksアニメーション--------------------
 
 const works = document.querySelectorAll('.works-list');
 const showWorks =(entries)=> {
@@ -86,44 +134,15 @@ const count = document.querySelector('#count');
 message.addEventListener('keyup',()=> {
   count.textContent = message.value.length;
 });
-
-//レスポンシブ--------------------------
-//ハンバーガーメニュー--------------------
-
-// ハンバーガーメニューの要素
-const hamburgerMenu = document.querySelector(".hamburger-menu");
-// ハンバーガーメニューがクリックされた時に表示されるメニュー画面の要素
-const navi = document.getElementById("hamburger-navigation");
-// ハンバーガーメニュー内の各セクションの要素
-const hamburgerMenuSections = document.querySelectorAll(".hamburger-menu-section");
-// ハンバーガーメニュー内の各メニューの要素
-const headerMenuList = document.querySelectorAll(".header-menu-list");
-
-// マスク
-const mask = document.getElementById("mask");
-
-// ハンバーガーメニューをクリックした時の処理
-hamburgerMenu.addEventListener("click", function () {
-    hamburgerMenu.classList.toggle("active");
-    navi.classList.toggle('active');
-    mask.classList.toggle('active');
-    hamburgerMenuSections.forEach(section=>{
-      section.classList.toggle('active');
-    });
-  });
-
-headerMenuList.forEach(menuItem=>{
-  menuItem.addEventListener("click",function(){
-    hamburgerMenu.classList.toggle("active");
-    navi.classList.toggle('active');
-    mask.classList.toggle('active');
-    hamburgerMenuSections.forEach(section=>{
-      section.classList.toggle('active');
-    });
-
-  });
-});;
-
+   } else if (mainElement.classList.contains('morework-page')) {
+  // moreworkページ用のJavaScriptコード
+  }  else if(mainElement.classList.contains('works-page')) {
+ // worksページ用のJavaScriptコード
 //moreWorkスライダー-----------------
 
 const swiper = new Swiper(".swiper", {});
+
+  } else {
+  // 他のページ用のJavaScriptコード
+   }
+  });
