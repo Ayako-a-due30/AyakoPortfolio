@@ -89,37 +89,25 @@ document.addEventListener("DOMContentLoaded", () => {
 		const skillBlock2 = document.querySelector("#skill-block2");
 
 		const showBlock1 = (entries) => {
-			const keyframes = [
-				{
-					opacity: 0,
-					transform: "translateX(200px)",
-				},
-				{
-					opacity: 1,
-					transform: "translateX(0)",
-				},
-			];
-
-			const options = {
-				duration: 600,
-				fill: "forwards",
+			const keyframes = {
+				opacity: [0, 1],
+				translate: ['200px 0', 0],
 			};
-
-			entries[0].target.animate(keyframes, options);
+			entries[0].target.animate(keyframes, 600);
 		};
-
 		const block1Observer = new IntersectionObserver(showBlock1);
-		block1Observer.observe(document.querySelector("#skill-block2"));
+		block1Observer.observe(skillBlock1);
+
 
 		const showBlock2 = (entries) => {
 			const keyframes = {
 				opacity: [0, 1],
-				translate: ["translateX(-200px)", "translateX(0)"],
+				translate: ['-200px 0',0],
 			};
 			entries[0].target.animate(keyframes, 600);
 		};
 		const block2Observer = new IntersectionObserver(showBlock2);
-		block1Observer.observe(skillBlock2);
+		block2Observer.observe(skillBlock2);
 
 		// CONTACT文字数カウント-----------------------
 		//textarea

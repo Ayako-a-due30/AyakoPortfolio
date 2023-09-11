@@ -19,6 +19,7 @@ h1,h2,h3 {
 nav {
     display: flex;
     background-color: $sub2;
+    box-shadow: 0 0 10px 0 $main2;
 }
 
 nav.fixed {
@@ -292,6 +293,11 @@ section {
 
 .submit-button:hover {
     background-color: $sub;
+}
+
+.work-table {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+
 }
 
 footer {
