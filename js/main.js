@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			navi.classList.remove("fixed");
 		}
 	});
+});
 
 	//レスポンシブ--------------------------
 	//ハンバーガーメニュー--------------------
@@ -132,7 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	} else if (mainElement.classList.contains("morework-page")) {
 		// moreworkページ用のJavaScriptコード
 
-		const swiper = new Swiper(".swiper", {});
+
+		
 	} else if (mainElement.classList.contains("works-page")) {
 		// worksページ用のJavaScriptコード
 	} else {

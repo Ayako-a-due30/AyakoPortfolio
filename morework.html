@@ -82,25 +82,25 @@
                 <div class="swiper-text">
                     <table class="work-table">
                         <tr>
-                            <td>サイト</td>
-                            <td>コーポレートサイト（ケータリング）</td>
+                            <td class="work-td work-td1">サイト</td>
+                            <td class="work-td">コーポレートサイト（ケータリング）</td>
                         </tr>
                         <tr>
-                            <td>制作期間</td>
-                            <td>４週間</td>
+                            <td class="work-td work-td1">制作期間</td>
+                            <td class="work-td">４週間</td>
                         </tr>
                         <tr>
-                            <td>使用言語</td>
-                            <td>HTML/SCSS/JavaScript</td>
+                            <td class="work-td work-td1">使用言語</td>
+                            <td class="work-td">HTML/SCSS/JavaScript</td>
                         </tr>
                         <tr>
-                            <td>その他</td>
-                            <td>スマホサイト対応、WordPress</td>
+                            <td class="work-td">その他</td>
+                            <td class="work-td">スマホサイト対応、WordPress</td>
                         </tr>
                     </table>
                 </div>
-                <img src="img/FuwariPc.png" alt="" class="img-pc">
-                <img src="img/FuwariPhone.png" alt="" class="img-phone">
+                <img src="img/FuwariPc.png" alt="">
+                <img src="img/FuwariPhone.png" alt="">
             </div>
             <div class="swiper-slide slide">
                 <div class="swiper-text">
@@ -216,6 +216,32 @@
                 el: '.swiper-scrollbar',
             },
         });
+//レスポンシブ
+		const swiperSlides = document.getElementsByClassName('swiper-slide');
+		const breakPoint = 960;
+		let mySwiper ;
+		let mySwiperBool ;
+		
+		
+		window.addEventListener('load',()=>{
+		  if( breakPoint < window.innerWidth){
+			mySwiperBool = false;
+		  }else{
+			createSwiper();
+			mySwiperBool = true;
+		  }
+		},false);
+		
+		window.addEventListener('resize',()=>{
+		  if( breakPoint < window.innerWidth && mySwiperBool){
+			mySwiper.destroy(false,true);
+			mySwiperBool = false;
+		  }else if( breakPoint >= window.innerWidth && !(mySwiperBool)){
+			createSwiper();
+			mySwiperBool = true;
+		  }
+		},false);
+		
     </script>
 
 </body>

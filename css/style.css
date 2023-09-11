@@ -168,6 +168,14 @@ section {
   width: 90%;
 }
 
+.work-td {
+  height: 30px;
+}
+
+.work-td1 {
+  width: 100px;
+}
+
 .about {
   display: flex;
 }
