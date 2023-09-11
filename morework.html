@@ -287,11 +287,32 @@ function handleResize() {
   if (window.innerWidth > breakPoint) {
     if (!mySwiper) {
       createSwiper();
+      applyStylesheet()
     }
   } else {
     destroySwiper();
+    removeStylesheet()
   }
 }
+
+// swiperのCSSの読み込み
+function applyStylesheet() {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css';
+  document.head.appendChild(link);
+}
+
+// swiperのCSSの読み込まない
+function removeStylesheet() {
+  const links = document.querySelectorAll('link[rel="stylesheet"]');
+  links.forEach(link => {
+    if (link.href === 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css') {
+      link.parentNode.removeChild(link);
+    }
+  });
+}
+
 
 window.addEventListener('load', () => {
   handleResize(); // ページが読み込まれたときに初期化または破棄する
