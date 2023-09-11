@@ -194,8 +194,66 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src ="js/main.js"></script>
     <script>
-        const swiper = new Swiper('.swiper', {
-            // Optional parameters
+
+        // kasuyaコメントアウト 20230911
+//         const swiper = new Swiper('.swiper', {
+//             // Optional parameters
+//             direction: 'horizontal',
+//             effect: 'cube',
+//             loop: true,
+
+//             // If we need pagination
+//             pagination: {
+//                 el: '.swiper-pagination',
+//             },
+
+//             // Navigation arrows
+//             navigation: {
+//                 nextEl: '.swiper-button-next',
+//                 prevEl: '.swiper-button-prev',
+//             },
+
+//             // And if we need scrollbar
+//             scrollbar: {
+//                 el: '.swiper-scrollbar',
+//             },
+//         });
+// //レスポンシブ
+// 		const swiperSlides = document.getElementsByClassName('swiper-slide');
+// 		const breakPoint = 960;
+// 		let mySwiper ;
+// 		let mySwiperBool ;
+
+
+// 		window.addEventListener('load',()=>{
+// 		  if( breakPoint < window.innerWidth){
+// 			mySwiperBool = false;
+// 		  }else{
+// 			createSwiper();
+// 			mySwiperBool = true;
+// 		  }
+// 		},false);
+
+// 		window.addEventListener('resize',()=>{
+// 		  if( breakPoint < window.innerWidth && mySwiperBool){
+// 			mySwiper.destroy(false,true);
+// 			mySwiperBool = false;
+// 		  }else if( breakPoint >= window.innerWidth && !(mySwiperBool)){
+// 			createSwiper();
+// 			mySwiperBool = true;
+// 		  }
+// 		},false);
+
+
+
+// kasuya追記　20230911
+const breakPoint = 960;
+let mySwiper;
+
+function createSwiper() {
+  mySwiper = new Swiper('.swiper', {
+    // Swiperのオプションをここに設定
+        //    Optional parameters
             direction: 'horizontal',
             effect: 'cube',
             loop: true,
@@ -214,34 +272,33 @@
             // And if we need scrollbar
             scrollbar: {
                 el: '.swiper-scrollbar',
-            },
-        });
-//レスポンシブ
-		const swiperSlides = document.getElementsByClassName('swiper-slide');
-		const breakPoint = 960;
-		let mySwiper ;
-		let mySwiperBool ;
-		
-		
-		window.addEventListener('load',()=>{
-		  if( breakPoint < window.innerWidth){
-			mySwiperBool = false;
-		  }else{
-			createSwiper();
-			mySwiperBool = true;
-		  }
-		},false);
-		
-		window.addEventListener('resize',()=>{
-		  if( breakPoint < window.innerWidth && mySwiperBool){
-			mySwiper.destroy(false,true);
-			mySwiperBool = false;
-		  }else if( breakPoint >= window.innerWidth && !(mySwiperBool)){
-			createSwiper();
-			mySwiperBool = true;
-		  }
-		},false);
-		
+                }
+  });
+}
+
+function destroySwiper() {
+  if (mySwiper) {
+    mySwiper.destroy(true, true);
+    mySwiper = undefined;
+  }
+}
+
+function handleResize() {
+  if (window.innerWidth > breakPoint) {
+    if (!mySwiper) {
+      createSwiper();
+    }
+  } else {
+    destroySwiper();
+  }
+}
+
+window.addEventListener('load', () => {
+  handleResize(); // ページが読み込まれたときに初期化または破棄する
+});
+
+window.addEventListener('resize', handleResize);
+
     </script>
 
 </body>
