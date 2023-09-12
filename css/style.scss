@@ -314,10 +314,15 @@ footer {
         height: 50%;
     }
 }
+
+.work-table {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
 //レスポンシブ
+//index.html-------------------
+
 @media (max-width:960px) {
     .header {
-        position: relative;
         height: 100vh;
     }
 
@@ -582,4 +587,49 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
 
 .img-phone {
     width: 30%;
+}
+
+@media (max-width:960px) {
+    .more-work-title {
+        margin-top: 30%;
+        margin-bottom: 10%;
+    }
+    .swiper {
+        width: 100%;
+        height: fit-content;
+    }
+    .hamburger-menu-section {
+        height:initial;
+    }
+
+    .work-table {
+        tr {
+            width: 100%;
+            td {
+                width: 50%;
+            }
+            .work-td {
+               padding-left: 10%; 
+            }
+        }
+    }
+    .swiper-wrapper {
+        .swiper-slide {
+            height: 140%;
+            display: flex;
+            margin-right: 0;
+    flex-direction: column;
+        }
+    }
+
+    .pc-img-resp {
+        width: 320px;
+        margin-right: auto;
+    margin-left: auto;
+    }
+    .cell-img-resp {
+        width: 160px;
+        margin-right: auto;
+    margin-left: auto;
+    }
 }
