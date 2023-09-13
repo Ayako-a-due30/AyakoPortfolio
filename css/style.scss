@@ -265,6 +265,7 @@ section {
         }
         input[type="textarea"] {
             height: 100px;
+            white-space: normal;
         }
         .count {
             margin-top: 5%;
@@ -275,7 +276,7 @@ section {
             margin-top: 5%;
         }
     }
-}
+    }
 
 
 .submit-button {
@@ -285,7 +286,7 @@ section {
     text-align: center;
     border-radius: 10%;
     color: #FFEAEA;
-    margin-top: 100px;
+    margin-top: 40%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -318,6 +319,17 @@ footer {
 .work-table {
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
+
+.swiper-button-next:after,
+.swiper-button-prev:after{    
+    color: $main;
+}
+
+.work-main {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
 //レスポンシブ
 //index.html-------------------
 
@@ -478,7 +490,7 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
     }
 
     section {
-        margin-top: 100px;
+        margin-top: 200px;
     }
     .work-table {
         display: block;
@@ -589,6 +601,10 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
     width: 30%;
 }
 
+tbody {
+    margin-left: 10%;
+}
+
 @media (max-width:960px) {
     .more-work-title {
         margin-top: 30%;
@@ -620,6 +636,10 @@ hamburger-menuクラスにactiveクラスが付与されたら、三→×に変�
             margin-right: 0;
     flex-direction: column;
         }
+    }
+
+    .swiper-button-next{
+        color: $main;
     }
 
     .pc-img-resp {

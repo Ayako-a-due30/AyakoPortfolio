@@ -262,6 +262,7 @@ section {
 }
 .contact dd input[type=textarea] {
   height: 100px;
+  white-space: normal;
 }
 .contact dd .count {
   margin-top: 5%;
@@ -279,7 +280,7 @@ section {
   text-align: center;
   border-radius: 10%;
   color: #FFEAEA;
-  margin-top: 100px;
+  margin-top: 40%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -311,6 +312,16 @@ footer p {
 
 .work-table {
   font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: #ff6e3e;
+}
+
+.work-main {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 @media (max-width: 960px) {
@@ -456,7 +467,7 @@ footer p {
     width: 100%;
   }
   section {
-    margin-top: 100px;
+    margin-top: 200px;
   }
   .work-table {
     display: block;
@@ -546,6 +557,10 @@ footer p {
   width: 30%;
 }
 
+tbody {
+  margin-left: 10%;
+}
+
 @media (max-width: 960px) {
   .more-work-title {
     margin-top: 30%;
@@ -573,6 +588,9 @@ footer p {
     display: flex;
     margin-right: 0;
     flex-direction: column;
+  }
+  .swiper-button-next {
+    color: #ff6e3e;
   }
   .pc-img-resp {
     width: 320px;
