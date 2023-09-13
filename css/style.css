@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 30%;
 }
 
 body {
@@ -256,11 +257,14 @@ section {
 }
 .contact dd input {
   height: 40px;
+  vertical-align: middle;
+  width: 100%;
+  background-color: #f3ecda;
+}
+.contact dd textarea {
   width: 100%;
   vertical-align: middle;
   background-color: #f3ecda;
-}
-.contact dd input[type=textarea] {
   height: 100px;
   white-space: normal;
 }

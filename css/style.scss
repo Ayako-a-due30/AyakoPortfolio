@@ -6,6 +6,7 @@ $sub2:#f3ecda;
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 30%;
 }
 
 body {
@@ -259,11 +260,14 @@ section {
         border-color: #000;
         input {
             height: 40px;
+            vertical-align: middle;
+            width: 100%;
+            background-color: $sub2;
+        }
+        textarea {
             width: 100%;
             vertical-align: middle;
             background-color: $sub2;
-        }
-        input[type="textarea"] {
             height: 100px;
             white-space: normal;
         }
